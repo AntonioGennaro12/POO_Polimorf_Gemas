@@ -28,17 +28,17 @@ else if (jugadores[1].length > jugadores[0].length) {
 else {
     console.log("ES UN VIRTUAL EMPATE, ahora solo depende de la habilidad propia del jugador");
     console.log("Pero si consideramos las gemas que tiene c/u podemos decir que si alguno");
-    console.log(" de ellos tiene la gema del Alma y/o Poder tendría una ventaja...");
+    console.log(" de ellos tiene la gema del Alma y/o del Poder tendría una ventaja...");
     let gemasImp1 = checkGemasImportantes(jugadores[0]);
     let gemasImp2 = checkGemasImportantes(jugadores[1]); 
     if (gemasImp1 > gemasImp2) {
-        console.log("el JUGADOR Nro: 1, tiene una ventaja");
+        console.log(" El JUGADOR Nro: 1, tiene una ventaja");
     }
     else if (gemasImp2 > gemasImp1 ) {
-        console.log("el JUGADOR Nro: 2, tiene una ventaja");
+        console.log(" El JUGADOR Nro: 2, tiene una ventaja");
     }
     else { 
-        console.log(" aun así persiste la paridad...");    
+        console.log(" -> Evaluado y aun así persiste la paridad...");    
     }
 }
 /**
@@ -49,8 +49,8 @@ else {
 function checkGemasImportantes(jugador) {
     let cont = 0;
     for (let i=0;i<jugador.length;i++){
-        if (jugador[i] instanceof gemaAlma) cont++;
-        if (jugador[i] instanceof gemaPoder) cont++;
+        if (jugador[i] instanceof gemaAlma) cont+=2;
+        if (jugador[i] instanceof gemaPoder) cont+=1;
     }
     return (cont);
 }
